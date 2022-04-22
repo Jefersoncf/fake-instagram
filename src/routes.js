@@ -17,12 +17,8 @@ router.post("/registro", authController.register);
 router.get("/home", isLogin, mainController.showHome);
 router.get("/publicar", isLogin, mainController.showCreatePublication);
 
-router.post(
-    '/publicar',
-    isLogin,
-    upload.single('photo'),
-    mainController.createPublication 
-);
+router.post('/publicar', isLogin, upload.single('photo'), mainController.createPublication);
+
 router.post('/comentario', isLogin, commentController.createComment)
 
 module.exports = router;

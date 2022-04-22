@@ -6,6 +6,8 @@ const session = require("express-session");
 
 var app = express();
 
+const port = process.env.PORT || 3000;
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -24,4 +26,4 @@ app.use(session({
 
 app.use("/", routes);
 
-app.listen(3000, () => console.log(`🚀 Server run on port 3000`));
+app.listen(port, () => console.log(`🚀 Server run on port ${port}`));
